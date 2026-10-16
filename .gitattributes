@@ -1,0 +1,7 @@
+# Not in the archive a site installs: the tests (their fixtures,
+# Base\Wikidoc\Tests\*, are registered by tests/bootstrap.php alone, which a
+# site's phpunit run over vendor/omnibase/*/tests does not read) and
+# PHPUnit's configuration.
+/tests              export-ignore
+/phpunit.xml.dist   export-ignore
+/.gitattributes     export-ignore
