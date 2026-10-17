@@ -29,7 +29,7 @@
     },
     "require": {
         "php": "^8.1",
-        "glitchr/omnibase": "3.0.*-dev",
+        "omniscient/omnibase": "3.0.*-dev",
         "league/commonmark": "^2.4",
         "symfony/config": "^6.0|^7.0|^8.0",
         "symfony/dependency-injection": "^6.0|^7.0|^8.0",

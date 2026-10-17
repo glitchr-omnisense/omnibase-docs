@@ -23,7 +23,7 @@ wikidoc:
     # Documentation roots, LOWEST priority first.
     roots:
         base:
-            path: '%kernel.project_dir%/vendor/glitchr/omnibase/docs'
+            path: '%base.package_dir%/docs'
             label: 'Base'
         app:
             path: '%kernel.project_dir%/docs'
