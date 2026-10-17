@@ -27,7 +27,7 @@ service it uses, no change in what its manual renders.
 
 ## Requirements
 
-PHP 8.1, glitchr/omnibase, league/commonmark. Optional:
+PHP 8.1, omniscient/omnibase, league/commonmark. Optional:
 
 | Package | Adds |
 |---|---|

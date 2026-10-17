@@ -41,7 +41,7 @@ The bundle's namespace and its configuration key are still `Wikidoc`
 ## Tests
 
 ```sh
-# in glitchr/omnibase's harness (core/docker)
+# in omniscient/omnibase's harness (core/docker)
 docker compose -f compose.yml -f compose.checkouts.yml run --rm omnibase test docs
 # or from an application that has the bundle
 php vendor/bin/phpunit -c vendor/omnibase/docs/phpunit.xml.dist
