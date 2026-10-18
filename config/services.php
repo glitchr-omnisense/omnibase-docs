@@ -2,12 +2,14 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use Base\Wikidoc\Controller\Backend\ManualController;
+use Base\Wikidoc\Bridge\Symfony\Command\IndexCommand;
+use Base\Wikidoc\Bridge\Symfony\Command\SyncCommand;
+use Base\Wikidoc\Bridge\Symfony\Controller\Backend\ManualController;
+use Base\Wikidoc\Bridge\Symfony\Site\Controller\ManualController as PublicManualController;
+use Base\Wikidoc\Controller\Backend\ManualController as KeptManualController;
 use Base\Wikidoc\Documentation\DocumentationRegistry;
 use Base\Wikidoc\Documentation\MarkdownRenderer;
 use Base\Wikidoc\Documentation\SearchIndexBuilder;
-use Base\Wikidoc\Command\IndexCommand;
-use Base\Wikidoc\Command\SyncCommand;
 use Base\Wikidoc\Manual\BranchExporter;
 use Base\Wikidoc\Manual\ManualMarkdownRenderer;
 use Base\Wikidoc\Manual\ManualRegistry;
@@ -16,7 +18,7 @@ use Base\Wikidoc\Search\LocalSearch;
 use Base\Wikidoc\Search\ManualIndex;
 use Base\Wikidoc\Search\ManualSearch;
 use Base\Wikidoc\Search\TypesenseIndex;
-use Base\Wikidoc\Site\Controller\ManualController as PublicManualController;
+use Base\Wikidoc\Site\Controller\ManualController as KeptPublicManualController;
 
 /*
  * This file is part of the Glitchr package.
@@ -31,6 +33,14 @@ use Base\Wikidoc\Site\Controller\ManualController as PublicManualController;
  * The manual is filesystem-backed: markdown files under the configured
  * documentation roots, no entities and no CRUD. The roots argument is
  * replaced by WikidocExtension from the processed `wikidoc.roots` config.
+ *
+ * The services of the bundle's root namespace (Documentation, Manual,
+ * Search) are plain PHP, built here with their arguments; another framework
+ * builds them the same way (README, "Without Symfony"). The controllers and
+ * the commands are the bridge's (src/Bridge/Symfony). Each controller is a
+ * service under two names: the bridge's class, and the class of the folder
+ * the sites import (src/Controller, src/Site/Controller), which inherits its
+ * routes - a route names the class its folder holds.
  */
 return function (ContainerConfigurator $configurator) {
 
@@ -117,29 +127,33 @@ return function (ContainerConfigurator $configurator) {
         ->args([service(ManualRegistry::class), service(ManualIndex::class), service(TypesenseIndex::class)->nullOnInvalid()])
         ->tag('console.command');
 
-    $services->set(PublicManualController::class)
-        ->args([
-            service(ManualRegistry::class),
-            service(PageRenderer::class),
-            service(ManualMarkdownRenderer::class),
-            service(ManualSearch::class),
-            service('translator')->nullOnInvalid(),
-        ])
-        ->call('setContainer', [$controllerServiceLocator])
-        ->public(true)
-        ->tag('controller.service_arguments');
-
-    if (class_exists('Base\\Admin\\Context\\AdminContext')) {
-        $services->set(ManualController::class)
+    foreach ([PublicManualController::class, KeptPublicManualController::class] as $controller) {
+        $services->set($controller)
             ->args([
-                service('Base\\Admin\\Context\\AdminContext'),
-                service('Base\\Admin\\Menu\\MenuBuilder'),
-                service(DocumentationRegistry::class),
-                service(MarkdownRenderer::class),
-                service(SearchIndexBuilder::class),
+                service(ManualRegistry::class),
+                service(PageRenderer::class),
+                service(ManualMarkdownRenderer::class),
+                service(ManualSearch::class),
+                service('translator')->nullOnInvalid(),
             ])
             ->call('setContainer', [$controllerServiceLocator])
             ->public(true)
             ->tag('controller.service_arguments');
+    }
+
+    if (class_exists('Base\\Admin\\Context\\AdminContext')) {
+        foreach ([ManualController::class, KeptManualController::class] as $controller) {
+            $services->set($controller)
+                ->args([
+                    service('Base\\Admin\\Context\\AdminContext'),
+                    service('Base\\Admin\\Menu\\MenuBuilder'),
+                    service(DocumentationRegistry::class),
+                    service(MarkdownRenderer::class),
+                    service(SearchIndexBuilder::class),
+                ])
+                ->call('setContainer', [$controllerServiceLocator])
+                ->public(true)
+                ->tag('controller.service_arguments');
+        }
     }
 };
