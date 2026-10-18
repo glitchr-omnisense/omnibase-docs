@@ -29,7 +29,8 @@
     },
     "require": {
         "php": "^8.1",
-        "omniscient/omnibase": "3.0.*-dev",
+        "omnibridge/symfony": "1.x-dev",
+        "omniscient/omnibase": "3.0.*-dev || 4.0.*-dev",
         "league/commonmark": "^2.4",
         "symfony/config": "^6.0|^7.0|^8.0",
         "symfony/dependency-injection": "^6.0|^7.0|^8.0",
