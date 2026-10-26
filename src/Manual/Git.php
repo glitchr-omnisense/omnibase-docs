@@ -85,7 +85,7 @@ final class Git
         return $branches;
     }
 
-    /** Where the repository is published, as a web address: "https://github.com/glitchr-studio/omnitrade". */
+    /** Where the repository is published, as a web address: "https://github.com/glitchr-omnisense/omnitrade". */
     public static function origin(string $path, string $remote = 'origin'): ?string
     {
         if (null === $git = self::dir($path)) {

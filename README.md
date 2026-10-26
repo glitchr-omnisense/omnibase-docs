@@ -90,7 +90,7 @@ nothing changes for a site.
 ## Tests
 
 ```sh
-# in omniscient/omnibase's harness (core/docker)
+# in omnisense/omnibase's harness (core/docker)
 docker compose -f compose.yml -f compose.checkouts.yml run --rm omnibase test docs
 # or from an application that has the bundle
 php vendor/bin/phpunit -c vendor/omnibase/docs/phpunit.xml.dist
