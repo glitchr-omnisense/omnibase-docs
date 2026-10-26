@@ -27,7 +27,7 @@ service it uses, no change in what its manual renders.
 
 ## Requirements
 
-PHP 8.1, omniscient/omnibase, league/commonmark. Under Symfony, the
+PHP 8.1, omnisense/omnibase, league/commonmark. Under Symfony, the
 framework comes through omnibridge/symfony. The pages, the manuals, their
 Markdown and the search are plain PHP and load without the framework
 (`Base\Wikidoc\Documentation`, `Manual`, `Search`; the bundle, its

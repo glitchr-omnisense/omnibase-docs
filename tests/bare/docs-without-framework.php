@@ -1,7 +1,7 @@
 <?php
 
 /*
- * omnibase/docs where there is no framework: run by omniscient/omnibase's
+ * omnibase/docs where there is no framework: run by omnisense/omnibase's
  * docker/bin/bare with Composer's autoloader alone (tests/BareTest.php), it
  * builds the services as another framework would - by hand, from the bundle's
  * root namespace - over the fixtures' repositories, and returns what they
