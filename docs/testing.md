@@ -18,12 +18,12 @@ versions), and `tests/Fixtures/export`, the copies `wikidoc:sync` would make.
 
 | Test | What it checks |
 |---|---|
-| `tests/Documentation/DocumentationRegistryTest.php` | The roots, the override by path, the titles and the order, the sequence |
-| `tests/Manual/ManualRegistryTest.php` | Discovery, naming (an npm scope kept), versions, pages |
-| `tests/Manual/GitTest.php` | The branches read with `git`, the export |
-| `tests/Manual/PageRendererTest.php` | A page's HTML, its links and pictures rewritten, "Edit this page" |
-| `tests/Search/ManualSearchTest.php` | The local index and the engine (`tests/Search/FakeTypesense.php` stands in for a server), the fallback when the engine does not answer |
-| `tests/DependencyInjection/ExtensionTest.php` | The configuration and what the extension registers |
+| `tests/Documentation/DocumentationRegistryTest.php` | The roots, a home file outside the folder, the reading order, a page's neighbours and ancestors |
+| `tests/Manual/ManualRegistryTest.php` | Discovery and exclusion, a manual found by its package name however spelt, a configured manual over a discovered one, the versions (the working tree first, the exports, checkouts of their own, newest first), the README as home, a page's address |
+| `tests/Manual/GitTest.php` | A branch, its siblings and its origin read from the `.git` folder, outside a repository, the other branches copied out as versions |
+| `tests/Manual/PageRendererTest.php` | Relative links (to pages, folders, inside each version), "Edit this page", the headings' ids, callouts, code blocks, a path that never leaves the repository, the back office's renderer untouched |
+| `tests/Search/ManualSearchTest.php` | The local index (sections, every word, code), a collection per manual and version replaced at each indexing, the engine (`tests/Search/FakeTypesense.php` stands in for a server), the local index when the engine is down or a manual was never indexed |
+| `tests/DependencyInjection/ExtensionTest.php` | A site that sets nothing new gets nothing new, the routes of the imported folders, the controllers under both names, the kept names, the public manuals on demand, the defaults |
 | `tests/BareTest.php` | The root namespace loaded with Composer's autoloader alone ([Without Symfony](without-symfony.md)) |
 
 An application's own test of its manual can build `DocumentationRegistry` on its
