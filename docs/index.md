@@ -14,7 +14,9 @@ editor, no table and no migration stands between the file and the reader.
 | [Public manuals](manuals.md) | `/docs/<package>/<version>/<page>` | everyone: one manual per package, one version per branch |
 | [Search](search.md) | a palette on every page, `/docs/_search` | Typesense, or the pages' own index |
 
-Then: [how a page is written](writing.md) and [how the pages look](templates.md).
+Then: [how a page is written](writing.md) and [how the pages look](templates.md);
+[without Symfony](without-symfony.md), the [configuration reference](configuration.md),
+the [reference](reference.md) (routes, commands, services) and [testing](testing.md).
 
 ## What is on by default
 
@@ -31,8 +33,8 @@ PHP 8.1, omnisense/omnibase, league/commonmark. Under Symfony, the
 framework comes through omnibridge/symfony. The pages, the manuals, their
 Markdown and the search are plain PHP and load without the framework
 (`Base\Wikidoc\Documentation`, `Manual`, `Search`; the bundle, its
-controllers and commands are under `src/Bridge/Symfony`): see the README,
-"Without Symfony". Optional:
+controllers and commands are under `src/Bridge/Symfony`): see
+[Without Symfony](without-symfony.md). Optional:
 
 | Package | Adds |
 |---|---|
