@@ -12,6 +12,9 @@ use Base\Wikidoc\Search\TypesenseIndex;
 use Base\Wikidoc\Tests\Fixtures;
 use PHPUnit\Framework\TestCase;
 
+// The test namespace where the application's autoloader runs this suite (tests/autoload.php).
+require_once \dirname(__DIR__).'/autoload.php';
+
 final class ManualSearchTest extends TestCase
 {
     private ManualRegistry $registry;
