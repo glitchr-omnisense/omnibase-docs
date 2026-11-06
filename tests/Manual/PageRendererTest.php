@@ -9,6 +9,9 @@ use Base\Wikidoc\Manual\RenderedPage;
 use Base\Wikidoc\Tests\Fixtures;
 use PHPUnit\Framework\TestCase;
 
+// The test namespace where the application's autoloader runs this suite (tests/autoload.php).
+require_once \dirname(__DIR__).'/autoload.php';
+
 final class PageRendererTest extends TestCase
 {
     /** @param array<string, mixed> $configured */
