@@ -167,7 +167,7 @@ final class PageRendererTest extends TestCase
 
     public function testTheBackOfficesRendererIsUntouched(): void
     {
-        // What two sites render: no callout, no frame.
+        // What the back office's manual renders: no callout, no frame.
         $html = (new MarkdownRenderer())->render("> [!NOTE]\n> Plain.\n\n```php\necho 1;\n```\n");
 
         self::assertStringContainsString('<blockquote>', $html);

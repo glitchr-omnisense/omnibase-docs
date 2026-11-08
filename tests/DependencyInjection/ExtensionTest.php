@@ -27,7 +27,7 @@ use Typesense\Bundle\ORM\TypesenseManager;
 
 final class ExtensionTest extends TestCase
 {
-    /** What two sites have: the back office's roots, or nothing at all. */
+    /** What the sites already configure: the back office's roots, or nothing at all. */
     private const BEFORE = ['roots' => [
         'base' => ['path' => '%kernel.project_dir%/vendor/glitchr/omnibase/docs', 'label' => 'Base'],
         'app' => ['path' => '%kernel.project_dir%/docs', 'label' => 'Application'],
