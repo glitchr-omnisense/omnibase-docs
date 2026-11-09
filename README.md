@@ -58,7 +58,7 @@ $html = (new MarkdownRenderer())->renderFile($pages->getDefault()->file);
 
 // The public manuals found under a folder of repositories, a page, the search.
 $manuals = new ManualRegistry([], ['/srv/repos/*/*'], ['export_dir' => '/srv/exports']);
-$manual = $manuals->get('glitchr/omnitrade');
+$manual = $manuals->get('omnisense/omnitrade');
 $version = $manual->getVersion(null);
 $page = (new PageRenderer($manuals, new ManualMarkdownRenderer()))->render(
     $manual, $version, $manuals->pages($manual, $version)->get('installation'),

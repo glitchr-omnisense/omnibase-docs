@@ -26,10 +26,10 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * Addresses, under `wikidoc.public.path` ("docs"):
  *
  *     /docs                                         every manual
- *     /docs/glitchr/omnitrade                       a manual, at its default version
- *     /docs/glitchr/omnitrade/1.x                   a version's home (the README, or docs/index.md)
- *     /docs/glitchr/omnitrade/1.x/webhooks          a page
- *     /docs/glitchr/omnitrade/current/webhooks      the same, whatever the default version is
+ *     /docs/omnisense/omnitrade                       a manual, at its default version
+ *     /docs/omnisense/omnitrade/1.x                   a version's home (the README, or docs/index.md)
+ *     /docs/omnisense/omnitrade/1.x/webhooks          a page
+ *     /docs/omnisense/omnitrade/current/webhooks      the same, whatever the default version is
  *     /docs/_search?q=webhook[&manual=...&version=...][&format=json]
  *
  * This controller lives outside src/Controller on purpose: the sites that
@@ -87,7 +87,7 @@ class ManualController extends AbstractController
         ]);
     }
 
-    /** A picture a page shows, served from the manual's repository: "glitchr/omnitrade/1.x/docs/img/flow.png". */
+    /** A picture a page shows, served from the manual's repository: "omnisense/omnitrade/1.x/docs/img/flow.png". */
     #[Route('/%wikidoc.public.path%/_file/{path}', name: 'wikidoc_asset', requirements: ['path' => '.+'], methods: ['GET'], priority: 10)]
     public function asset(string $path): Response
     {

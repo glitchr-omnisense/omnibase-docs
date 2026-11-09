@@ -59,7 +59,7 @@ class WikidocConfiguration extends AbstractBaseConfiguration
                 //
                 //     wikidoc:
                 //         manuals:
-                //             glitchr/omnitrade: { path: '%env(OMNI_REPOS)%/omnitrade/core' }
+                //             omnisense/omnitrade: { path: '%env(OMNI_REPOS)%/omnitrade/core' }
                 //         discover: ['%env(OMNI_REPOS)%/*/*']
                 //         public: { enabled: true }
                 //         search: { typesense: { enabled: true } }

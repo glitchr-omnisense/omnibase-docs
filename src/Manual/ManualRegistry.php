@@ -36,7 +36,7 @@ class ManualRegistry
     ) {
     }
 
-    /** @return array<string, Manual> keyed by key ("glitchr/omnitrade"), sorted */
+    /** @return array<string, Manual> keyed by key ("omnisense/omnitrade"), sorted */
     public function all(): array
     {
         if (null !== $this->manuals) {
@@ -72,7 +72,7 @@ class ManualRegistry
     }
 
     /**
-     * What an address names. "glitchr/omnitrade/1.x/webhooks" is the page
+     * What an address names. "omnisense/omnitrade/1.x/webhooks" is the page
      * "webhooks" of version 1.x; without a version, or with "current", the
      * manual's default version. The longest manual key wins, so
      * "omnibase/docs" is never read as a page of a manual called "omnibase".

@@ -18,7 +18,7 @@ wikidoc:
         enabled: true
         path: docs            # the address they are published under
     manuals:
-        glitchr/omnitrade:
+        omnisense/omnitrade:
             path: '%env(OMNI_REPOS)%/omnitrade/core'    # the repository's checkout
     # or: every package found under these folders
     discover:
@@ -44,7 +44,7 @@ the public routes with it.
 | `README.md` | the home page - unless `docs/index.md` exists, which is then the home, the README staying readable as the first page |
 | `docs/*.md` | a page each |
 | `docs/<folder>/` | a section; `docs/<folder>/index.md` is its own page |
-| `composer.json` or `package.json` | the manual's name (`glitchr/omnitrade`, `@glitchr/stickyjs`) and description |
+| `composer.json` or `package.json` | the manual's name (`omnisense/omnitrade`, `@glitchr/stickyjs`) and description |
 | `.git/config`, remote `origin` | the repository's web address, for "Edit this page" |
 
 A package without a `docs/` folder and with a README is a manual of one
@@ -89,7 +89,7 @@ A version is a branch of the repository whose name matches
 
 ```sh
 bin/console wikidoc:sync                    # every manual
-bin/console wikidoc:sync glitchr/omnibus    # one
+bin/console wikidoc:sync omnisense/omnibus    # one
 bin/console wikidoc:sync --remote=github    # read another remote's branches beside the local ones
 ```
 
@@ -109,7 +109,7 @@ copies:
 ```yaml
 wikidoc:
     manuals:
-        glitchr/omnibus:
+        omnisense/omnibus:
             path: '/srv/repos/omnibus/core'
             versions:
                 '2.x': '/srv/repos/omnibus/core'
@@ -125,12 +125,12 @@ Versions are listed newest first (`main` and `master` ahead, then `3.x`,
 | Address | |
 |---|---|
 | `/docs` | every manual (`wikidoc_index`) |
-| `/docs/glitchr/omnitrade` | redirects to the default version |
-| `/docs/glitchr/omnitrade/1.x` | the version's home |
-| `/docs/glitchr/omnitrade/1.x/webhooks` | a page (`wikidoc_manual`, `path: glitchr/omnitrade/1.x/webhooks`) |
-| `/docs/glitchr/omnitrade/current/webhooks` | redirects to the page in the default version |
+| `/docs/omnisense/omnitrade` | redirects to the default version |
+| `/docs/omnisense/omnitrade/1.x` | the version's home |
+| `/docs/omnisense/omnitrade/1.x/webhooks` | a page (`wikidoc_manual`, `path: omnisense/omnitrade/1.x/webhooks`) |
+| `/docs/omnisense/omnitrade/current/webhooks` | redirects to the page in the default version |
 | `/docs/_search?q=webhook` | the search (`wikidoc_search`): see [Search](search.md) |
-| `/docs/_file/glitchr/omnitrade/1.x/docs/img/flow.png` | a picture of the manual (`wikidoc_asset`) |
+| `/docs/_file/omnisense/omnitrade/1.x/docs/img/flow.png` | a picture of the manual (`wikidoc_asset`) |
 
 A manual's part of an address is its package name, lower case, without the
 `@` of an npm scope: `glitchr/stickyjs` for `@glitchr/stickyjs`. One
@@ -166,13 +166,13 @@ here.
 ```php
 use Base\Wikidoc\Manual\ManualRegistry;
 
-$manuals->all();                               // array<string, Manual>, keyed "glitchr/omnitrade"
-$manual = $manuals->get('glitchr/omnitrade');  // or null
+$manuals->all();                               // array<string, Manual>, keyed "omnisense/omnitrade"
+$manual = $manuals->get('omnisense/omnitrade');  // or null
 $manual->versions;                             // array<string, ManualVersion>, newest first
 $manual->getDefaultVersion();
-$manual->urlPath('1.x', 'webhooks');           // "glitchr/omnitrade/1.x/webhooks"
+$manual->urlPath('1.x', 'webhooks');           // "omnisense/omnitrade/1.x/webhooks"
 $manuals->pages($manual, $version);            // a DocumentationRegistry: tree, pages, reading order
-$manuals->resolve('glitchr/omnitrade/1.x/webhooks');   // ManualLocation: manual, version, path
+$manuals->resolve('omnisense/omnitrade/1.x/webhooks');   // ManualLocation: manual, version, path
 ```
 
 `ManualRegistry` and `ManualSearch` are registered whether the public

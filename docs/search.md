@@ -12,8 +12,8 @@ that goes to the results page.
 
 ```
 /docs/_search?q=webhook                                   every manual, each in its default version
-/docs/_search?q=webhook&manual=glitchr/omnitrade          one manual, its default version
-/docs/_search?q=webhook&manual=glitchr/omnibus&version=1.x
+/docs/_search?q=webhook&manual=omnisense/omnitrade          one manual, its default version
+/docs/_search?q=webhook&manual=omnisense/omnibus&version=1.x
 /docs/_search?q=webhook&format=json                       what the palette reads
 ```
 
@@ -59,7 +59,7 @@ wikidoc:
 
 ```sh
 bin/console wikidoc:index                      # every manual, every version
-bin/console wikidoc:index glitchr/omnitrade    # one
+bin/console wikidoc:index omnisense/omnitrade    # one
 ```
 
 One collection per manual and version (`wikidoc_glitchr-omnitrade_1-x`),
@@ -99,12 +99,12 @@ and does not answer, and says so when it is switched off.
 use Base\Wikidoc\Search\ManualSearch;
 
 $result = $search->search('webhook');                                // every manual
-$result = $search->search('webhook', 'glitchr/omnitrade', '1.x', limit: 10);
+$result = $search->search('webhook', 'omnisense/omnitrade', '1.x', limit: 10);
 
 $result->engine;     // "typesense" or "local"
 $result->found;
 foreach ($result->hits as $hit) {
-    $hit->manual; $hit->version; $hit->path;      // "glitchr/omnitrade", "1.x", "webhooks"
+    $hit->manual; $hit->version; $hit->path;      // "omnisense/omnitrade", "1.x", "webhooks"
     $hit->title; $hit->section; $hit->anchor;     // "Webhooks", "Signature", "signature"
     $hit->snippet;
 }

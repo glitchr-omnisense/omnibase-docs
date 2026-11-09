@@ -12,7 +12,7 @@ final class ManualLocation
         public readonly Manual $manual,
         public readonly ManualVersion $version,
         public readonly string $path,
-        /** False when the address names no version ("glitchr/omnitrade/webhooks") or says "current". */
+        /** False when the address names no version ("omnisense/omnitrade/webhooks") or says "current". */
         public readonly bool $explicit,
     ) {
     }

@@ -6,7 +6,7 @@ namespace Base\Wikidoc\Manual;
  * One manual: the documentation of one package, read in its repository
  * (its `docs/` folder and its README), in one or several versions.
  *
- * Its name is the package's own - "glitchr/omnitrade", "omnitrade/stripe",
+ * Its name is the package's own - "omnisense/omnitrade", "omnitrade/stripe",
  * "@glitchr/stickyjs" - and its key is that name as an address spells it:
  * lower case, without the "@" an npm scope starts with.
  */
@@ -30,7 +30,7 @@ final class Manual
         return strtolower(trim(ltrim(trim($name), '@'), '/'));
     }
 
-    /** The manual's part of an address: "glitchr/omnitrade". */
+    /** The manual's part of an address: "omnisense/omnitrade". */
     public function getKey(): string
     {
         return self::keyOf($this->name);
@@ -61,7 +61,7 @@ final class Manual
         return [] === $this->versions ? null : $this->versions[array_key_first($this->versions)];
     }
 
-    /** "glitchr/omnitrade/1.x/webhooks": what follows the manuals' prefix in an address. */
+    /** "omnisense/omnitrade/1.x/webhooks": what follows the manuals' prefix in an address. */
     public function urlPath(?string $version = null, string $page = ''): string
     {
         $version = $this->getVersion($version);
