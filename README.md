@@ -22,10 +22,17 @@ that only has the back office's manual changes nothing.
 composer require omnibase/docs
 ```
 
+Under Symfony it runs on the core's Symfony host: Composer brings `omnisense/omnibase` 5.1 and
+`omnibridge/symfony` with it; `config/bundles.php` registers the core's bundle before this one:
+
 ```php
 // config/bundles.php
+Omnibridge\Symfony\Omnibase\BaseBundle::class => ['all' => true],
 Base\Wikidoc\WikidocBundle::class => ['all' => true],
 ```
+
+A first page: a Markdown file under the application's `docs/` is read by the back office's
+manual at `/docs` (with omnibase/admin); without the framework, the snippet below renders it.
 
 The bundle's namespace and its configuration key are still `Wikidoc`
 (`Base\Wikidoc\`, `wikidoc:`), from the package it was before.

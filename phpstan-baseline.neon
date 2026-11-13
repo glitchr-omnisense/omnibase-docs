@@ -1,0 +1,49 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \$adminContext of method Base\\Wikidoc\\Bridge\\Symfony\\Controller\\Backend\\ManualController\:\:__construct\(\) has invalid type Base\\Admin\\Context\\AdminContext\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Controller/Backend/ManualController.php
+
+		-
+			message: '#^Parameter \$menuBuilder of method Base\\Wikidoc\\Bridge\\Symfony\\Controller\\Backend\\ManualController\:\:__construct\(\) has invalid type Base\\Admin\\Menu\\MenuBuilder\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Controller/Backend/ManualController.php
+
+		-
+			message: '#^Property Base\\Wikidoc\\Bridge\\Symfony\\Controller\\Backend\\ManualController\:\:\$adminContext has unknown class Base\\Admin\\Context\\AdminContext as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Controller/Backend/ManualController.php
+
+		-
+			message: '#^Property Base\\Wikidoc\\Bridge\\Symfony\\Controller\\Backend\\ManualController\:\:\$menuBuilder has unknown class Base\\Admin\\Menu\\MenuBuilder as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Controller/Backend/ManualController.php
+
+		-
+			message: '#^Method Base\\Wikidoc\\Bridge\\Symfony\\Search\\BundleTypesenseClient\:\:client\(\) has invalid return type Typesense\\Client\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Search/BundleTypesenseClient.php
+
+		-
+			message: '#^Parameter \$manager of method Base\\Wikidoc\\Bridge\\Symfony\\Search\\BundleTypesenseClient\:\:__construct\(\) has invalid type Typesense\\Bundle\\ORM\\TypesenseManager\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Search/BundleTypesenseClient.php
+
+		-
+			message: '#^Property Base\\Wikidoc\\Bridge\\Symfony\\Search\\BundleTypesenseClient\:\:\$manager has unknown class Typesense\\Bundle\\ORM\\TypesenseManager as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Bridge/Symfony/Search/BundleTypesenseClient.php
+
+		-
+			message: '#^Instantiated class Tempest\\Highlight\\Highlighter not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Manual/ManualMarkdownRenderer.php

@@ -29,8 +29,8 @@
     },
     "require": {
         "php": "^8.1",
-        "omnibridge/symfony": "1.x-dev",
-        "omnisense/omnibase": "3.0.*-dev || 4.0.*-dev || 5.0.*-dev",
+        "omnibridge/symfony": "^1.1",
+        "omnisense/omnibase": "^5.1",
         "league/commonmark": "^2.4",
         "symfony/filesystem": "^6.0|^7.0|^8.0",
         "symfony/finder": "^6.0|^7.0|^8.0"
@@ -51,7 +51,6 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true,
-        "minimum-stability": "dev"
+        "sort-packages": true
     }
 }
