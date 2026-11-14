@@ -48,6 +48,10 @@
         "tempest/highlight": "Colours the public manuals' code blocks on the server (PHP 8.4)."
     },
     "config": {
+        "allow-plugins": {
+            "omnibridge/composer": true,
+            "php-http/discovery": true
+        },
         "preferred-install": {
             "*": "dist"
         },
