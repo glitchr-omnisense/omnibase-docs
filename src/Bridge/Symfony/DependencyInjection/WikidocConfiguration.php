@@ -4,7 +4,7 @@ namespace Base\Wikidoc\Bridge\Symfony\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
-use Base\Bundle\AbstractBaseConfiguration;
+use Omnibridge\Symfony\Omnibase\Bundle\AbstractBaseConfiguration;
 
 class WikidocConfiguration extends AbstractBaseConfiguration
 {

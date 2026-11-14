@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Processor;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-use Base\Bundle\AbstractBaseExtension;
+use Omnibridge\Symfony\Omnibase\Bundle\AbstractBaseExtension;
 use Base\Wikidoc\Documentation\DocumentationRegistry;
 use Base\Wikidoc\Manual\ManualRegistry;
 use Base\Wikidoc\Manual\PageRenderer;

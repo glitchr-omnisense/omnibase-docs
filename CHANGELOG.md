@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-11-14
+
+### Changed
+
+- The classes omnisense/omnibase 5.0 moved to omnibridge/symfony named by their new names:
+  `Omnibridge\Symfony\Omnibase\Bundle\{AbstractBaseBundle, AbstractBaseExtension, AbstractBaseConfiguration}`
+  in place of `Base\Bundle\*`, former names the core keeps only as aliases until 6.0. No behaviour change.
+- BareTest expects omnibridge/symfony's AbstractBaseBundle as the bundle's parent.
+
 ## [2.0.0] - 2026-11-13
 
 First stable release.
