@@ -93,7 +93,7 @@ final class BareTest extends TestCase
         $bundle = $report['classes'][WikidocBundle::class];
         self::assertNull($bundle['error']);
         // omnibridge/symfony's AbstractBaseBundle, the bundle's parent.
-        self::assertSame('Omnibridge\\Symfony\\Omnibase\\Bundle\\AbstractBaseBundle', $bundle['framework']['Symfony\\Component\\HttpKernel\\Bundle\\Bundle'] ?? null);
+        self::assertSame('Base\\Bundle\\AbstractBaseBundle', $bundle['framework']['Symfony\\Component\\HttpKernel\\Bundle\\Bundle'] ?? null);
         self::assertNotEmpty(preg_grep('~/symfony/http-kernel/~', $bundle['framework_files']));
     }
 
