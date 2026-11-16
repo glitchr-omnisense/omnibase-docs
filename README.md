@@ -22,7 +22,7 @@ that only has the back office's manual changes nothing.
 composer require omnibase/docs
 ```
 
-Under Symfony it runs on the core's Symfony host: Composer brings `omnisense/omnibase` 5.1 and
+Under Symfony it runs on the core's Symfony host: Composer brings `omnisense/omnibase` 7.0 and
 `omnibridge/symfony` with it; `config/bundles.php` registers the core's bundle before this one:
 
 ```php
